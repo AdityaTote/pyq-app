@@ -1,0 +1,1 @@
+export const BACKEND_URL="https://pyq-be-production.up.railway.app";
