@@ -1,50 +1,83 @@
-# Welcome to your Expo app 👋
+# 📚 PYQ App — Amravati University (Mechanical)
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+This repository contains a mobile-first PYQ (previous-year question) app focused on the Mechanical Engineering branch of Sant Gadge Baba Amravati University. The app is built with Expo and expo-router and provides an organized viewer for past question papers by semester, subject and year.
 
-## Get started
+### 🎯 Key goals
 
-1. Install dependencies
+- ✅ Provide students quick access to previous-year question papers (PYQs) for Mechanical Engineering.
+- 🔎 Make papers easy to browse by semester, subject, and year.
+- ⚡ Lightweight, offline-capable viewer and simple bookmarking/download support.
 
-   ```bash
-   npm install
-   ```
+## 📁 What you'll find in this repo
 
-2. Start the app
+- `app/` — expo-router routes and screens. Main route groups include:
+  - `(bottomtabs)/` — main tab layout, account and core navigation
+  - `(stack)/paper/` — paper listing and details (by id)
+  - `(stack)/sem/`, `(stack)/sub/`, `(stack)/viewer/` — semester, subject and viewer pages
+- `components/` — reusable UI components and small unit tests
+- `assets/` — images and fonts (SpaceMono included)
+- `scripts/` — utilities like `reset-project.js`
 
-   ```bash
-    npx expo start
-   ```
+## ✨ Features (planned / implemented)
 
-In the output, you'll find options to open the app in a
+- 📚 Browse papers by semester and subject
+- 📄 View paper content in-app (PDF/webview)
+- ⭐ Bookmark and quick-access recent papers
+- 🌐 Responsive for both mobile and web via Expo
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+If you'd like to add features (example: offline caching of PDFs, search by keywords, or user accounts), open an issue or a PR.
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+## 🚀 Quick start (developer)
 
-## Get a fresh project
+### 🧰 Prerequisites
 
-When you're ready, run:
+- Node.js (recommend Node 18+)
+- Git
+- Expo CLI (optional — you can use the local npm scripts)
 
-```bash
+### 📦 Install
+
+```zsh
+npm install
+```
+
+### ▶️ Start the project
+
+```zsh
+npm run start
+```
+
+### 📱 Run on device/emulator
+
+```zsh
+npm run android    # Android device/emulator
+npm run ios        # iOS simulator (macOS only)
+npm run web        # Run in browser
+```
+
+### ✅ Tests and linting
+
+```zsh
+npm run test
+npm run lint
+```
+
+### ♻️ Reset project
+
+```zsh
 npm run reset-project
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+## 🗂️ Data & content
 
-## Learn more
+This app expects paper data to be provided in a format consumable by the `paper`/`sem`/`sub` routes (for example: JSON lists with IDs and file URLs). The repository currently includes screens/routes to list and view papers — if you have a canonical source for PYQs (university website or a maintained dataset), we can wire an importer or an admin UI to manage them.
 
-To learn more about developing your project with Expo, look at the following resources:
+## 🏗️ EAS (production builds)
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+See `app.json` for Expo configuration and EAS-related project settings. To build production binaries using EAS:
 
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+```zsh
+# requires EAS CLI and login
+eas build -p android
+eas build -p ios
+```
