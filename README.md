@@ -1,4 +1,4 @@
-# 📚 PYQ App — Amravati University (Mechanical)
+# 📚 PYQ App
 
 This repository contains a mobile-first PYQ (previous-year question) app focused on the Mechanical Engineering branch of Sant Gadge Baba Amravati University. The app is built with Expo and expo-router and provides an organized viewer for past question papers by semester, subject and year.
 
